@@ -1,0 +1,27 @@
+.doc-assistant-page .question-field {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    font-weight: 600;
+}
+
+.question-field .send-question-btn {
+    width: fit-content;
+    margin-block-start: 1rem;
+    align-self: center;
+}
+
+.doc-assistant-page .answer-section {
+    flex: 1;
+    margin-block-start: 2rem;
+    overflow: auto;
+    display: flex;
+}
+
+.answer-section .loading {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    gap: 1rem;
+}

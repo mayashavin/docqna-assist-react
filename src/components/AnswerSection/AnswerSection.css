@@ -1,0 +1,10 @@
+
+.answer-wrapper-section p {
+    display: inline;
+    margin: 0;
+}
+
+.answer-footnote {
+    color: #0078d4;
+    padding-inline-end: 2px;
+}

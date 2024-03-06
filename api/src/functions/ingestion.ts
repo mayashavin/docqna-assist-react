@@ -45,7 +45,7 @@ export async function ingestion(request: HttpRequest, context: InvocationContext
         console.log(response);
         return {
             status: 200,
-            body: response
+            jsonBody: response
         };
     } catch (error) {
         console.error(error);

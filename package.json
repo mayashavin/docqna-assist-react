@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@azure/msal-browser": "^2.38.0",
     "@azure/msal-react": "^1.5.9",
-    "@fluentui/react": "^8.110.8",
+    "@azure/static-web-apps-cli": "^1.1.6",
+    "@fluentui/react-components": "^9.46.7",
+    "@fluentui/react-icons": "^2.0.230",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.3.0",
     "workbox-range-requests": "^6.5.4",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tanstack/react-query": "^5.24.1",

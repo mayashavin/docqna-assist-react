@@ -32,10 +32,10 @@ export async function ingestionStatus(request: HttpRequest, context: InvocationC
             }
         }).then(res => res.json());
 
-        console.log(response.status);
+        console.log(response);
         return {
             status: 200,
-            body: response
+            jsonBody: response
         };
     } catch (error) {
         console.error(error);
@@ -45,7 +45,7 @@ export async function ingestionStatus(request: HttpRequest, context: InvocationC
 };
 
 app.http('ingestionStatus', {
-    methods: ['GET'],
+    methods: ['POST'],
     authLevel: 'anonymous',
     handler: ingestionStatus
 });

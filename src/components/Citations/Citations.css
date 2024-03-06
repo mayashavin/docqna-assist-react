@@ -1,0 +1,11 @@
+button.selected {
+    border-color: #0078d4;
+    color: #0078d4;
+}
+
+.citations-list {
+    gap: 10px;
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+}

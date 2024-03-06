@@ -2,7 +2,7 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 import { getCredentials } from "../utils/getCredentials";
 import { ROLES } from "../utils/messageParams.type";
 import { AISearchDataSource, AISearchDataSourceParams, QueryTypes } from "../utils/datasourceParams.type";
-import { OYDResponseParams } from "../utils/OYDResponseParams.type";
+import { Citation, OYDResponseParams } from "../utils/OYDResponseParams.type";
 
 interface BodyPayload {
     query: string;
@@ -33,7 +33,7 @@ export async function ask(request: HttpRequest, context: InvocationContext): Pro
     return { jsonBody: answer, status: 200 };
 };
 
-async function getAnswer(query: string, additionalPrompt?: string): Promise<string> {
+async function getAnswer(query: string, additionalPrompt?: string): Promise<{ answer: string, citations: Citation[]}> {
     //1. Compute the path for the chat
     const path = `${endpoint}/openai/deployments/${deploymentId}/chat/completions?api-version=2024-02-15-preview`;
 
@@ -85,7 +85,10 @@ async function getAnswer(query: string, additionalPrompt?: string): Promise<stri
         console.log(response);
 
         //6. Return the answer
-        return response.choices[0].message.content;
+        return {
+            answer: response.choices[0].message.content,
+            citations: response.choices[0].message.context.citations,
+        };
     } catch (error) {
         console.error(error);
         throw error;
